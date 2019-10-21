@@ -14,5 +14,21 @@
 Route::get('/', function () {
     return view('welcome');
 });
+// 导航列表
 Route::get('navs', 'NavController@index');
-Route::get('banners', 'BannerController@index');
+
+// 主导航列表
+Route::get('navs/primary', 'NavController@primary');
+
+// 子导航列表
+Route::get('navs/second/{pid}', 'NavController@second');
+
+// banner 
+Route::get('banner', 'BannerController@index');
+
+ // 内容展示列表
+Route::get('content', 'ContentController@index');
+
+// 单条内容详情
+Route::get('content/detail/{id}', 'ContentController@detail');
+
