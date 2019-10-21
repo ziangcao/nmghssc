@@ -38,7 +38,8 @@ class ContentController extends AdminController
         });
         $grid->column('title', __('标题'));
         $grid->column('content', __('内容'))->display(function ($describe) {
-            $describe = mb_strlen($describe) < 200 ? $describe : mb_substr($describe,0,200).'...';
+            $describe = strip_tags($describe);
+            $describe = mb_strlen($describe) < 100 ? $describe : mb_substr($describe,0,100).'...';
             return $describe;
         });
         $grid->column('images', __('图集'))->display(function ($pictures) {

@@ -23,7 +23,7 @@ class BannerController extends Controller
         	foreach($val as $k =>$v){
         		$data[$key][$k] = $v;
         	}
-        	$data[$key]['img_path'] = env('img_path').current($val['img_path']);
+        	$data[$key]['img_path'] = env('qiniu_path').current($val['img_path']);
         }
         return response($data,200);
     }
