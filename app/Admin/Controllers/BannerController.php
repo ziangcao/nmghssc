@@ -25,11 +25,10 @@ class BannerController extends AdminController
     protected function grid()
     {
         $grid = new Grid(new Banner);
-//        $grid->picture()->gallery(['width' => 50, 'height' => 50]);
         $grid->column('id', __('编码Id'))->width(100);
         $grid->column('img_path', '图片路径')->display(function ($pictures) {
             return $pictures;
-        })->image('', 50, 50);;
+        })->image('', 50, 50);
         $grid->column('title', '标题')->width(150);
         $grid->column('describe', '描述')->display(function ($describe) {
             $describe = mb_strlen($describe)< 200 ? $describe : mb_substr($describe,0,200).'...';

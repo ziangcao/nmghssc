@@ -13,4 +13,5 @@ Route::group([
     $router->get('/', 'HomeController@index')->name('admin.home');
     $router->resource('banner', BannerController::class);
     $router->resource('navs', NavController::class);
+    $router->resource('contents', ContentController::class);
 });
