@@ -36,8 +36,7 @@ class NavController extends AdminController
                 return $nav_name->name;
             }else{
                 return '根栏目';
-            }
-            
+            }   
         });
         $grid->column('sort', __('排序'));
         $grid->column('explain', __('解释'));

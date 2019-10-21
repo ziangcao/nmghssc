@@ -1028,6 +1028,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel-admin-extensions/media-manager/zipball/08ef816da82e543f7519d6b17aa34f1ef13adaab",
                 "reference": "08ef816da82e543f7519d6b17aa34f1ef13adaab",
+<<<<<<< HEAD
                 "shasum": "",
                 "mirrors": [
                     {
@@ -1035,6 +1036,9 @@
                         "preferred": true
                     }
                 ]
+=======
+                "shasum": ""
+>>>>>>> origin/caojunfeng
             },
             "require": {
                 "encore/laravel-admin": "~1.6",
@@ -1356,6 +1360,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/0e9db7f0b96b9f12dcf6f65bc34b72b1a30ea55a",
                 "reference": "0e9db7f0b96b9f12dcf6f65bc34b72b1a30ea55a",
+<<<<<<< HEAD
                 "shasum": "",
                 "mirrors": [
                     {
@@ -1363,6 +1368,9 @@
                         "preferred": true
                     }
                 ]
+=======
+                "shasum": ""
+>>>>>>> origin/caojunfeng
             },
             "require": {
                 "ext-fileinfo": "*",
@@ -1580,6 +1588,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/4be0c005164249208ce1b5ca633cd57bdd42ff33",
                 "reference": "4be0c005164249208ce1b5ca633cd57bdd42ff33",
+<<<<<<< HEAD
                 "shasum": "",
                 "mirrors": [
                     {
@@ -1587,6 +1596,9 @@
                         "preferred": true
                     }
                 ]
+=======
+                "shasum": ""
+>>>>>>> origin/caojunfeng
             },
             "require": {
                 "kylekatarnls/update-helper": "^1.1",
