@@ -14,4 +14,5 @@ Route::group([
     $router->resource('banner', BannerController::class);
     $router->resource('navs', NavController::class);
     $router->resource('contents', ContentController::class);
+    $router->resource('basics', BasicController::class);
 });
