@@ -51,7 +51,7 @@ class ContentController extends AdminController
             return $selected ? '是' : '否';
         })->width(100);
         $grid->column('created_at', __('创建时间'));
-        $grid->column('updated_at', __('U更新时间'));
+        $grid->column('updated_at', __('更新时间'));
 
         return $grid;
     }

@@ -26,6 +26,9 @@ Route::get('navs/second/{pid}', 'NavController@second');
 // banner 
 Route::get('banner', 'BannerController@index');
 
+// 基础信息获取
+Route::get('basics', 'BasicController@index');
+
  // 内容展示列表
 Route::get('content', 'ContentController@index');
 

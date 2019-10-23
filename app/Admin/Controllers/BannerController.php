@@ -55,7 +55,7 @@ class BannerController extends AdminController
     protected function detail($id)
     {
         $show = new Show(Banner::findOrFail($id));
-
+        
         $show->field('id', __('编码id'));
         $show->field('title', __('标题'));
         $show->field('img_path', __('图片显示'))->image();
