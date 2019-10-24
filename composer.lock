@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "82b4e385faeefb5bcbb7f153cc6ac88d",
+    "content-hash": "91d220e74e0af40b74bf7c72d78aa04a",
     "packages": [
         {
             "name": "codingyu/laravel-ueditor",
@@ -1575,6 +1575,61 @@
                 "schedule"
             ],
             "time": "2017-01-23T04:29:33+00:00"
+        },
+        {
+            "name": "namet/laravel-admin-tagsinput",
+            "version": "0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/namet117/laravel-admin-tagsinput.git",
+                "reference": "38bb15476d6fbe89d4e1c447c72d1240d5ab71df"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/namet117/laravel-admin-tagsinput/zipball/38bb15476d6fbe89d4e1c447c72d1240d5ab71df",
+                "reference": "38bb15476d6fbe89d4e1c447c72d1240d5ab71df",
+                "shasum": ""
+            },
+            "require": {
+                "encore/laravel-admin": "~1.6",
+                "php": ">=7.0.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~6.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Namet\\Tagsinput\\TagsinputServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Namet\\Tagsinput\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "namet",
+                    "email": "namet117@163.com"
+                }
+            ],
+            "description": "tagsinput for laravel-admin Form",
+            "homepage": "https://github.com/namet117/laravel-admin-tagsinput",
+            "keywords": [
+                "bootstrap",
+                "extension",
+                "jquery",
+                "laravel-admin",
+                "tagsinput"
+            ],
+            "time": "2019-03-25T07:08:44+00:00"
         },
         {
             "name": "nesbot/carbon",

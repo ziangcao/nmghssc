@@ -54,7 +54,7 @@ class BasicController extends AdminController
     {
         $form = new Form(new Basic);
 
-        $form->tags('keywords','关键词');
+        $form->tagsinput('keywords','关键词');
         $form->textarea('description', __('描述'));
         $form->multipleImage('logo', 'logo')->help('请上传图片格式')->sortable()->removable();
         $form->table('contact','联系方式', function ($table) {
