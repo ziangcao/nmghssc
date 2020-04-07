@@ -60,7 +60,7 @@ class BannerController extends AdminController
         $show->field('title', __('标题'));
         $show->field('img_path', __('图片显示'))->image();
         $show->field('describe', __('描述'));
-        $show->field('is_delete', __('是否禁用'))->using(['1' => '是', '0' => '否']);;
+        $show->field('is_delete', __('是否禁用'))->using(['1' => '是', '0' => '否']);
         $show->field('selected', __('前台显示'))->using(['1' => '是', '0' => '否']);
         $show->field('created_at', __('创建时间'));
         $show->field('updated_at', __('更新时间'));
