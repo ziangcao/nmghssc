@@ -91,4 +91,27 @@ class ContentController extends Controller
         }
         return response($data,200);
     }
+
+
+    public function list(Request $request)
+    {
+        $list = Content::where('selected',1)
+            ->where('nid','!=',1)
+            ->where('nid','!=',3)
+            ->orderBy('sort','desc')
+            ->get()->toarray();
+        $data =[];
+        foreach($list as $key =>$val){
+            foreach($val as $k =>$v){
+                $data[$key][$k] = $v;
+            }
+            if(!empty($val['images'])){
+//                $data[$key]['images'] = env('qiniu_path').current($val['images']);
+                foreach($val['images'] as $k1 => &$v1){
+                    $data[$key]['images'][$k1] = env('qiniu_path').$v1;
+                }
+            }
+        }
+        return response($data,200);
+    }
 }

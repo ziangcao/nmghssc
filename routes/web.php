@@ -41,3 +41,6 @@ Route::get('products/{nid}', 'ContentController@products');
 // 成功案例列表
 Route::get('case', 'ContentController@case');
 
+// 成功案例列表
+Route::get('list', 'ContentController@list');
+
