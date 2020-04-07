@@ -29,9 +29,9 @@ Route::get('banner', 'BannerController@index');
 // 基础信息获取
 Route::get('basics', 'BasicController@index');
 
- // 内容展示列表
-Route::get('content', 'ContentController@index');
+ // 资讯展示列表
+Route::get('news', 'ContentController@news');
 
-// 单条内容详情
-Route::get('content/detail/{id}', 'ContentController@detail');
+// 单条资讯详情
+Route::get('news/detail/{id}', 'ContentController@detail');
 
