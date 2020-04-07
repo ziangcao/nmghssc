@@ -99,6 +99,7 @@ class ContentController extends Controller
             ->where('nid','!=',1)
             ->where('nid','!=',3)
             ->orderBy('sort','desc')
+            ->limit(8)
             ->get()->toarray();
         $data =[];
         foreach($list as $key =>$val){
