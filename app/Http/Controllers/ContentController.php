@@ -19,7 +19,49 @@ class ContentController extends Controller
                 $data[$key][$k] = $v;
             }
             if(!empty($val['images'])){
-                $data[$key]['images'] = env('qiniu_path').current($val['images']);
+//                $data[$key]['images'] = env('qiniu_path').current($val['images']);
+                foreach($val['images'] as $k1 => &$v1){
+                    $data[$key]['images'][$k1] = env('qiniu_path').$v1;
+                }
+            }
+        }
+        return response($data,200);
+    }
+
+    public function case(Request $request)
+    {
+        $list = Content::where('selected',1)
+            ->where('nid',3)
+            ->get()->toarray();
+        $data =[];
+        foreach($list as $key =>$val){
+            foreach($val as $k =>$v){
+                $data[$key][$k] = $v;
+            }
+            if(!empty($val['images'])){
+//                $data[$key]['images'] = env('qiniu_path').current($val['images']);
+                foreach($val['images'] as $k1 => &$v1){
+                    $data[$key]['images'][$k1] = env('qiniu_path').$v1;
+                }
+            }
+        }
+        return response($data,200);
+    }
+
+    public function products(Request $request)
+    {
+        $list = Content::where('selected',1)
+            ->where('nid',$request->nid)
+            ->get()->toarray();
+        $data =[];
+        foreach($list as $key =>$val){
+            foreach($val as $k =>$v){
+                $data[$key][$k] = $v;
+            }
+            if(!empty($val['images'])){
+                foreach($val['images'] as $k1 => &$v1){
+                    $data[$key]['images'][$k1] = env('qiniu_path').$v1;
+                }
             }
         }
         return response($data,200);
@@ -41,7 +83,11 @@ class ContentController extends Controller
             foreach($val as $k =>$v){
                 $data[$key][$k] = $v;
             }
-            $data[$key]['images'] = env('qiniu_path').current($val['images']);
+            if(!empty($val['images'])){
+                foreach($val['images'] as $k1 => &$v1){
+                    $data[$key]['images'][$k1] = env('qiniu_path').$v1;
+                }
+            }
         }
         return response($data,200);
     }

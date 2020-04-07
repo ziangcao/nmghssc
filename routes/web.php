@@ -35,3 +35,9 @@ Route::get('news', 'ContentController@news');
 // 单条资讯详情
 Route::get('news/detail/{id}', 'ContentController@detail');
 
+// 产品展示列表
+Route::get('products/{nid}', 'ContentController@products');
+
+// 成功案例列表
+Route::get('case', 'ContentController@case');
+
