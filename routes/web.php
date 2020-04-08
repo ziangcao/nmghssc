@@ -44,3 +44,6 @@ Route::get('case', 'ContentController@case');
 // 成功案例列表
 Route::get('list', 'ContentController@list');
 
+// 公司介绍
+Route::get('company', 'ContentController@company');
+

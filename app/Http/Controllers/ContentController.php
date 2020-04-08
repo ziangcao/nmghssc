@@ -92,12 +92,32 @@ class ContentController extends Controller
         return response($data,200);
     }
 
+    public function company()
+    {
+        $list = Content::where('nid',4)
+            ->first();
+        $data =[];
+        foreach($list as $key =>$val){
+            foreach($val as $k =>$v){
+                $data[$key][$k] = $v;
+            }
+            if(!empty($val['images'])){
+                foreach($val['images'] as $k1 => &$v1){
+                    $data[$key]['images'][$k1] = env('qiniu_path').$v1;
+                }
+            }
+        }
+        return response($data,200);
+    }
+
 
     public function list(Request $request)
     {
         $list = Content::where('selected',1)
             ->where('nid','!=',1)
             ->where('nid','!=',3)
+            ->where('nid','!=',2)
+            ->where('nid','!=',4)
             ->orderBy('sort','desc')
             ->limit(8)
             ->get()->toarray();
