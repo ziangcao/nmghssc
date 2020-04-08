@@ -26,16 +26,23 @@ class ContentController extends AdminController
     protected function grid()
     {
         $grid = new Grid(new Content);
+        $grid->filter(function($filter){
 
+            // 去掉默认的id过滤器
+            $filter->disableIdFilter();
+
+            // 在这里添加字段过滤器
+            $filter->like('nid', '所属类目');
+        });
         $grid->column('id', __('Id'));
         $grid->column('nid', __('所属类目'))->display(function($nid){
             if($nid!=0){
                 $nav_name = Nav::where('id',$nid)->first();
-                return $nav_name->name;
+                return $nid.$nav_name->name;
             }else{
                 return '根栏目';
-            }   
-        });
+            }
+        })->width(100);
         $grid->column('title', __('标题'));
         $grid->column('content', __('内容'))->display(function ($describe) {
             $describe = strip_tags($describe);
@@ -45,13 +52,13 @@ class ContentController extends AdminController
         $grid->column('images', __('图集'))->display(function ($pictures) {
             return $pictures;
         })->image('', 50, 50);
-        $grid->column('author', __('发布者'));
+        $grid->column('author', __('发布者'))->width(100);
         // $grid->column('sort', __('Sort'));
         $grid->column('selected', __('前台展示'))->display(function ($selected) {
             return $selected ? '是' : '否';
-        })->width(100);
-        $grid->column('created_at', __('创建时间'));
-        $grid->column('updated_at', __('更新时间'));
+        })->width(50);
+        $grid->column('created_at', __('创建时间'))->width(100)->sortable();
+        $grid->column('updated_at', __('更新时间'))->width(100)->sortable();
 
         return $grid;
     }
