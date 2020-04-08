@@ -95,7 +95,7 @@ class ContentController extends Controller
     public function company()
     {
         $list = Content::where('nid',4)
-            ->first();
+            ->get()->toarray();
         $data =[];
         foreach($list as $key =>$val){
             foreach($val as $k =>$v){
