@@ -41,7 +41,7 @@ Route::get('products/{nid}', 'ContentController@products');
 // 成功案例列表
 Route::get('case', 'ContentController@case');
 
-// 成功案例列表
+// 产品首页列表
 Route::get('list', 'ContentController@list');
 
 // 公司介绍
