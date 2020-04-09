@@ -24,6 +24,7 @@ class ContentController extends Controller
                     $data[$key]['images'][$k1] = env('qiniu_path').$v1;
                 }
             }
+            $data[$key]['images'] = array_values($data[$key]['images']);
         }
         return response($data,200);
     }
@@ -44,6 +45,7 @@ class ContentController extends Controller
                     $data[$key]['images'][$k1] = env('qiniu_path').$v1;
                 }
             }
+            $data[$key]['images'] = array_values($data[$key]['images']);
         }
         return response($data,200);
     }
@@ -63,6 +65,7 @@ class ContentController extends Controller
                     $data[$key]['images'][$k1] = env('qiniu_path').$v1;
                 }
             }
+            $data[$key]['images'] = array_values($data[$key]['images']);
         }
         return response($data,200);
     }
@@ -88,6 +91,7 @@ class ContentController extends Controller
                     $data[$key]['images'][$k1] = env('qiniu_path').$v1;
                 }
             }
+            $data[$key]['images'] = array_values($data[$key]['images']);
         }
         return response($data,200);
     }
@@ -106,6 +110,7 @@ class ContentController extends Controller
                     $data[$key]['images'][$k1] = env('qiniu_path').$v1;
                 }
             }
+            $data[$key]['images'] = array_values($data[$key]['images']);
         }
         return response($data,200);
     }
@@ -126,13 +131,15 @@ class ContentController extends Controller
             foreach($val as $k =>$v){
                 $data[$key][$k] = $v;
             }
+
             if(!empty($val['images'])){
 //                $data[$key]['images'] = env('qiniu_path').current($val['images']);
                 foreach($val['images'] as $k1 => &$v1){
                     $data[$key]['images'][$k1] = env('qiniu_path').$v1;
                 }
             }
-            $data[$key]['images'] = array_values($val['images']);
+            $data[$key]['images'] = array_values($data[$key]['images']);
+
         }
         return response($data,200);
     }
