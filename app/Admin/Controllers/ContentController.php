@@ -32,17 +32,26 @@ class ContentController extends AdminController
             $filter->disableIdFilter();
 
             // 在这里添加字段过滤器
-            $filter->like('nid', '所属类目');
+//            $filter->like('nid', '所属类目');
+            $filter->like('nid', '所属类目')->select(function (){
+                $navs = Nav::get();
+                $res = [];
+                foreach($navs as $val){
+                    $res[$val->id] = $val->name;
+                }
+                return $res;
+            });
         });
+        $grid->model()->orderBy('updated_at','desc');
         $grid->column('id', __('Id'));
         $grid->column('nid', __('所属类目'))->display(function($nid){
             if($nid!=0){
                 $nav_name = Nav::where('id',$nid)->first();
-                return $nid.$nav_name->name;
+                return $nav_name->name;
             }else{
                 return '根栏目';
             }
-        })->width(100);
+        })->width(100)->sortable();
         $grid->column('title', __('标题'));
         $grid->column('content', __('内容'))->display(function ($describe) {
             $describe = strip_tags($describe);
@@ -50,6 +59,9 @@ class ContentController extends AdminController
             return $describe;
         });
         $grid->column('images', __('图集'))->display(function ($pictures) {
+            if(!empty($pictures)){
+              return array_slice($pictures,0,2);
+            }
             return $pictures;
         })->image('', 50, 50);
         $grid->column('author', __('发布者'))->width(100);
