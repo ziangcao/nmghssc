@@ -132,6 +132,7 @@ class ContentController extends Controller
                     $data[$key]['images'][$k1] = env('qiniu_path').$v1;
                 }
             }
+            $data[$key]['images'] = array_values($val['images']);
         }
         return response($data,200);
     }
