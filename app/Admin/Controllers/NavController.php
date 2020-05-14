@@ -38,7 +38,8 @@ class NavController extends AdminController
             }   
         });
         $grid->column('sort', __('排序'));
-        $grid->column('explain', __('解释'));
+        $grid->column('keyword', __('关键词'))->width(80);
+//        $grid->column('explain', __('描述'));
         $grid->column('created_at', __('创建时间'));
         $grid->column('updated_at', __('更新时间'));
 
@@ -68,7 +69,9 @@ class NavController extends AdminController
         $show->field('name', __('名称'));
         $show->field('image', __('图标'))->image();
         $show->field('sort', __('排序'));
-        $show->field('explain', __('Explain'));
+        $show->field('keyword', __('关键字'));
+        $show->field('title', __('展示标题'));
+        $show->field('explain', __('描述'));
         $show->field('created_at', __('创建时间'));
         $show->field('updated_at', __('更新时间'));
 
@@ -95,7 +98,9 @@ class NavController extends AdminController
         $form->text('name', __('Name'));
         $form->image('image', '图片')->help('请上传图片格式')->removable();
         $form->number('sort', __('sort'));
-        $form->text('explain', __('Explain'));
+        $form->tagsinput('keyword','关键词');
+        $form->text('title', __('标题'));
+        $form->text('explain', __('描述'));
 
         return $form;
     }
