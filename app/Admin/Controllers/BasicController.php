@@ -28,7 +28,7 @@ class BasicController extends AdminController
 
         $grid->column('id', __('Id'));
         $grid->column('keywords', __('关键词'))->width(80);
-        $grid->column('description', __('描述介绍'))->width(100);
+//        $grid->column('description', __('描述介绍'))->width(100);
         $grid->column('logo', __('Logo'))->display(function ($pictures) {
             return $pictures;
         })->image('', 50, 50);
@@ -56,6 +56,7 @@ class BasicController extends AdminController
 
         $form->tagsinput('keywords','关键词');
         $form->textarea('description', __('描述'));
+        $form->text('title', __('页面标题'));
         $form->multipleImage('logo', 'logo')->help('请上传图片格式')->sortable()->removable();
         $form->table('contact','联系方式', function ($table) {
             $table->text('key');
