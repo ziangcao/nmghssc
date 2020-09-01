@@ -12,6 +12,8 @@ class ContentController extends Controller
     {
         $list = Content::where('selected',1)
             ->where('nid',1)
+	    ->orderBy('created_at','desc')
+	    ->limit(6)
             ->get()->toarray();
         $data =[];
         foreach($list as $key =>$val){
